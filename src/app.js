@@ -16,8 +16,7 @@ app.get('/help',(req,res)=>{res.status(200).render('help')})
 
 app.get('/movies',(req,res)=>{
     movie = req.query.t
-    year = req.query.y
-    const url = "https://www.omdbapi.com/?t=" + movie + "&apikey=b0b2852e&y=" + year
+    const url = "https://www.omdbapi.com/?t=" + movie + "&apikey=b0b2852e&y="
     request({url:url, json:true}, (error, response)=>{
         if(error){
             res.send("Unable to connect to movie database server.")
