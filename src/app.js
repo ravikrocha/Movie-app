@@ -3,7 +3,7 @@ const express = require("express")
 const request = require("postman-request")
 const app = express()
 const publicDirectoryPath = path.join(__dirname,"../public")
-const port = process.env.POR || 3032
+const port = process.env.PORT || 3320
 
 app.set('view engine', 'pug')
 app.set('views',path.join(__dirname,'../views'))
@@ -14,9 +14,10 @@ app.get('/about',(req,res)=>{res.status(200).render('about')})
 app.get('/help',(req,res)=>{res.status(200).render('help')})
 
 
-app.get('/movies',(req,res)=>{
+app.get('/',(req,res)=>{
     movie = req.query.t
-    const url = "https://www.omdbapi.com/?t=" + movie + "&apikey=b0b2852e&y="
+    year = req.query.y
+    const url = "https://www.omdbapi.com/?t=" + movie + "&apikey=b0b2852e&y=" + year
     request({url:url, json:true}, (error, response)=>{
         if(error){
             res.send("Unable to connect to movie database server.")
