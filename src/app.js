@@ -1,10 +1,9 @@
 const path = require("path")
 const express = require("express")
 const request = require("postman-request")
-
-
 const app = express()
 const publicDirectoryPath = path.join(__dirname,"../public")
+const port = process.env.POR || 3032
 
 app.set('view engine', 'pug')
 app.set('views',path.join(__dirname,'../views'))
@@ -40,5 +39,5 @@ app.get('/movies',(req,res)=>{
         })
 
 
-app.listen(3032,()=>
-console.log("Server is up on port port 3032."))
+app.listen(port,()=>
+console.log("Server is up on port port " + port))
