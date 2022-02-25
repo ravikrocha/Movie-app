@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node public/js/app.js"
+    "start": "node src/app.js"
   },
   "author": "Ravik Rocha",
   "license": "ISC",
