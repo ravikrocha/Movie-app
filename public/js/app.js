@@ -26,7 +26,7 @@ movieForm.addEventListener('submit',(e)=>{
     messagePlot.textContent = ''
     messageRatings.textContent = '' 
 
-    fetch("/?t=" + movie + "&apikey=b0b2852e").then((response)=>{
+    fetch("http://localhost:3032/movies?t=" + movie).then((response)=>{
     response.json().then((data)=>{
         if(data.Error){
             messageTitle.textContent = data.Error
