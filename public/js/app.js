@@ -16,7 +16,7 @@ const messageRatings = document.querySelector('#messageRatings')
 movieForm.addEventListener('submit',(e)=>{
     e.preventDefault()
     const movie = search.value
-    messageTitle.textContent = "loading..."
+    messageTitle.textContent = 'loading...'
     messageYear.textContent = ''
     messageYear.textContent = ''
     messageRuntime.textContent = ''
@@ -33,6 +33,8 @@ movieForm.addEventListener('submit',(e)=>{
             
         }
         else{
+            posterURL = data.Poster
+            posterImage.setAttribute("src",posterURL)
             messageTitle.textContent = "Title: " + data.Title
             messageYear.textContent = "Year: " + data.Year
             messageRuntime.textContent = "Runtime: " + data.Runtime

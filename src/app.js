@@ -3,7 +3,7 @@ const express = require("express")
 const request = require("postman-request")
 const app = express()
 const publicDirectoryPath = path.join(__dirname,"../public")
-const port = process.env.PORT || 3320
+const port = process.env.PORT || 3333
 
 app.set('view engine', 'pug')
 app.set('views',path.join(__dirname,'../views'))
